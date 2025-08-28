@@ -8,7 +8,7 @@ metadata:
    servicetype: retail
    env: dev
 spec:
-  container: 
+  containers: 
   - name: nginx
     image: nginx
 ---
