@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Pod
 metadata: 
- name: retail-service
+ name: nginx-pod
  namespace: cems-workloads
  lables: 
    project: cems
