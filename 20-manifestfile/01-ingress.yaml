@@ -14,5 +14,6 @@ spec:
         backend:
           service:
             name: retail-service
+            namespace: cems-workloads
             port:
               number: 80

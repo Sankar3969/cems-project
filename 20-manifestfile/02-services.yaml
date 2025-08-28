@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Pod
+metadata: 
+ name: retail-service
+ namespace: cems-workloads
+ lables: 
+   project: cems
+   servicetype: retail
+   env: dev
+spec:
+  container: 
+    - name: nginx
+      image: nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Service
+metadata: 
+ name: retail-service
+ namespace: cems-workloads
+ lables: 
+   project: cems
+   servicetype: retail
+   env: dev
+spec:
+  selector:
+    project: cems
+    servicetype: retail
+    env: dev
+  ports:
+    - name: nginx-svc-port
+      protocal: TCP
+      port: 80
+      targetPort: 80
