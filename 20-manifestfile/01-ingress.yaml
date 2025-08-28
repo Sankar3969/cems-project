@@ -14,7 +14,6 @@ spec:
         backend:
           service:
             name: retail-service-proxy
-            namespace: cems-nginx
             port:
               number: 80
 ---
