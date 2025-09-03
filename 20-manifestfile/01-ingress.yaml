@@ -6,7 +6,6 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: cems.danskebank.com
     http:
       paths:
       - path: /
