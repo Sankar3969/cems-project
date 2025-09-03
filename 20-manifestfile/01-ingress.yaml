@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cems-ingress
-  namespace: cems-nginx
+  namespace: cems-workloads
 spec:
   ingressClassName: azure-application-gateway
   rules:
@@ -13,18 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: retail-service-proxy
+            name: retail-service
             port:
               number: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: retail-service-proxy
-  namespace: cems-nginx
-spec:
-  type: ExternalName
-  externalName: retail-service.cems-workloads.svc.cluster.local
-  ports:
-    - port: 80
-      targetPort: 80
